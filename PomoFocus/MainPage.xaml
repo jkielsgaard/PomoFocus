@@ -7,28 +7,48 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    Width="500"
-    Height="800">
+    Width="600"
+    Height="800"
+    x:Name="MainWindow"
+    >
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="25"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="25"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="tbl_time" Text="00:00" FontSize="120" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <TextBlock x:Name="tbl_taskname" Text="Task time" FontSize="50" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"></TextBlock>
-        <TextBlock x:Name="tbl_tasktime" Text="00:00:00" FontSize="50" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
-        <Button x:Name="btn_ss" Content="Start" FontSize="50" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Click="btn_ss_Click"/>
+        <TextBlock x:Name="tbl_mode" Text="Working"    FontSize="90"   Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock x:Name="tbl_time" Text="00:00"   FontSize="120"  Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
 
+        <ComboBox   x:Name="cb_cata"        FontSize="25"   Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Header="Category" SelectedIndex="0">
+            <ComboBoxItem>Customer</ComboBoxItem>
+            <ComboBoxItem>Intern</ComboBoxItem>
+            <ComboBoxItem>Traning</ComboBoxItem>
+        </ComboBox>
+        <ComboBox   x:Name="cb_task"        FontSize="25"   Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Header="Tasks" PlaceholderText="... Select a Task"></ComboBox>
+        
+        <TextBlock  x:Name="tbl_taskname"   Text="Today time"    FontSize="50"   Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" VerticalAlignment="Center"     HorizontalAlignment="Stretch"></TextBlock>
+        <TextBlock  x:Name="tbl_tasktime"   Text="00:00:00"     FontSize="50"   Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="5" VerticalAlignment="Center"     HorizontalAlignment="Center"></TextBlock>
+
+        <Button     x:Name="btn_ss"         Content="▷"     Background="White" FontSize="50" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="1" Grid.Row="7" Click="btn_ss_Click"></Button>
+        <Button     x:Name="btn_mode"       Content="⇆"     Background="White" FontSize="50" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="2" Grid.Row="7" Click="btn_mode_Click"></Button>
+        <Button     x:Name="btn_clear"      Content="✘"     Background="White" FontSize="50" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="3" Grid.Row="7" Click="btn_clear_Click"></Button>
+        <Button     x:Name="btn_menu"       Content="≡"   Background="White" FontSize="50" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="4" Grid.Row="7" Click="btn_menu_Click"></Button>
     </Grid>
 </Page>
